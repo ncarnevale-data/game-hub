@@ -1,15 +1,16 @@
+import { Button, ButtonGroup } from "@chakra-ui/react";
+
 interface Props {
   children: string;
-  color?: "primary" | "secondary" | "danger" | "success" | "warning";
   onClick: () => void;
 }
 
-const Button = ({ children, onClick, color = "primary" }: Props) => {
+const LocalButton = ({ children, onClick }: Props) => {
   return (
-    <button className={"btn btn-" + color} onClick={onClick}>
+    <Button colorScheme="blue" onClick={onClick}>
       {children}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default LocalButton;
