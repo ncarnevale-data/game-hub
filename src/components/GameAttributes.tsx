@@ -10,20 +10,20 @@ interface Props {
 const GameAttributes = ({ game }: Props) => {
   return (
     <SimpleGrid columns={2} as="dl">
-      <DefinitionItem term="Platforms">
+      <DefinitionItem term="Platforms" key={1}>
         {game.parent_platforms?.map(({ platform }) => (
           <Text key={platform.id}>{platform.name}</Text>
         ))}
       </DefinitionItem>
-      <DefinitionItem term="Metascore">
+      <DefinitionItem term="Metascore" key={2}>
         <CriticScore score={game.metacritic} />
       </DefinitionItem>
-      <DefinitionItem term="Genres">
+      <DefinitionItem term="Genres" key={3}>
         {game.genres.map((genre) => (
           <Text key={genre.id}>{genre.name}</Text>
         ))}
       </DefinitionItem>
-      <DefinitionItem term="Publishers">
+      <DefinitionItem term="Publishers" key={4}>
         {game.publishers?.map((publisher) => (
           <Text key={publisher.id}>{publisher.name}</Text>
         ))}
